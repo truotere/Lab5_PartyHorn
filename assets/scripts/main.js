@@ -1,20 +1,25 @@
-<script>
+var volumeNumber = document.getElementById("volume-number");
+var volumeSlider = document.getElementById("volume-slider");
 
-
-
-var volumeNumber = parseInt(document.getElementById("volume-number").value);
-var volumeSlider = document.getElementById("volume-slider").value;
-
-document.addEventListener("volume-number", updateVolumeValue);
+document.addEventListener("input", updateSlider);
 document.addEventListener("volume-slider", updateVolumeValue);
 
-function updateVolumeValue(vol) {
-    document.getElementById("volume-number").value=vol;
+function updateSlider () {
+    volumeNumber.value = volumeSlider.value;
+}
+
+
+function updateVolumeValue(vol){
+    document.getElementById("volume-number").value;
 }
 
 var volumeImage = document.getElementById("volume-image");
 
-function setVolume() {
+function updateSlider () {
+    volumeNumber.value = volumeSlider.value;
+}
+
+function setVolume(){
     if (67 <= volumeNumber && volumeNumber <= 100) {
         volumeImage.src = "volume-level-3.svg";
     } else if (34 <= volumeNumber && volumeNumber <= 66) {
@@ -58,10 +63,6 @@ function playSound() {
     } else {
         soundImage.src = "party-horn.mp3";
     }  
-
     sound.play();
 }
 
-
-
-</script>
